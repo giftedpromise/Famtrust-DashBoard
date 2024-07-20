@@ -19,7 +19,7 @@ const ProfileCard = () => {
         border:
           "1px solid var(--Color-Style-Surface-Roles-Surface-container-highest, #E2E2E2)",
         background: "var(--Color-Style-Primary-Roles-On-Pri-color, #F9F8FF)",
-        "@media (max-width: 640px)": {
+        "@media (maxWidth: 640px)": {
           width: "100%" /* Full width on small screens */,
         },
       }}

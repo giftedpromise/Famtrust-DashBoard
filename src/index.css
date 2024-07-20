@@ -9,6 +9,7 @@
   --radius-rounded-sm: 4px;
   --Color-Style-Primary-Roles-Pri-color: #4567f7;
   --Color-Style-Primary-Roles-Pri-variant: #2452d6;
+  --color-style-secondary-roles-sec-color: #8bc34a;
 }
 
 .nav-text {
@@ -80,7 +81,7 @@
 .total-balance {
   color: #ababab;
   font-family: Lato;
-  font-size: 14px;
+  font-size: 11px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px; /* 142.857% */
@@ -99,7 +100,25 @@
   line-height: normal;
 }
 
-@media (max-width: 768px) {
+.date-text {
+  color: var(--Neutral-8, #777);
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+/* styles.css or relevant CSS file */
+.expense-label {
+  color: #000;
+  font-family: Lato, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal; /* Regular weight */
+}
+
+@media (maxwidth: 768px) {
   .profile-card {
     width: 100%;
     padding: 0; /* Remove padding on small screens */

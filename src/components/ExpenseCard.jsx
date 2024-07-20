@@ -1,4 +1,14 @@
 import React from "react";
+import { CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
+
+const expenses = [
+  { label: "Internet", amount: 1000, progress: 73, change: -20.08 },
+  { label: "Foodstuff", amount: 2500, progress: 80, change: 10.2 },
+  { label: "Electronics", amount: 300, progress: 90, change: -30.92 },
+  { label: "Rent", amount: 3450, progress: 60, change: 9.31 },
+];
 
 const ExpenseCard = () => {
   return (
@@ -13,35 +23,54 @@ const ExpenseCard = () => {
       }}
     >
       <h2 className="text-xl font-semibold mb-4">Expenses</h2>
-      <div className="space-y-4 flex-grow">
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="text-gray-500">Income</span>
-            <span className="text-blue-600">₦1000.00</span>
+      <div className="space-y-4 flex-grow overflow-y-auto">
+        {expenses.map((expense, index) => (
+          <div key={index} className="flex justify-between items-center">
+            <div className="flex items-center">
+              <div style={{ width: 50, height: 50 }}>
+                <CircularProgressbar
+                  value={expense.progress}
+                  text={`${expense.progress}%`}
+                  styles={{
+                    path: {
+                      stroke: `#4567F7`,
+                    },
+                    text: {
+                      fill: "#4567F7",
+                      fontSize: "24px",
+                    },
+                  }}
+                />
+              </div>
+              <div className="ml-2 flex flex-col">
+                <span
+                  style={{
+                    color: "#000",
+                    fontFamily: "Lato",
+                    fontSize: "16px",
+                    fontStyle: "normal",
+                    fontWeight: 600,
+                    lineHeight: "24px",
+                    letterSpacing: "0.15px",
+                  }}
+                >
+                  ${expense.amount.toFixed(2)}
+                </span>
+                <span className="expense-label">{expense.label}</span>
+              </div>
+            </div>
+            <div
+              className={`flex items-center ${
+                expense.change > 0 ? "text-green-500" : "text-red-500"
+              }`}
+            >
+              {expense.change > 0 ? <FaArrowUp /> : <FaArrowDown />}
+              <span className="ml-1">
+                {Math.abs(expense.change).toFixed(2)}%
+              </span>
+            </div>
           </div>
-          <div className="text-red-500">-10.00%</div>
-        </div>
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="text-gray-500">Foodstuff</span>
-            <span className="text-red-600">₦2,500.00</span>
-          </div>
-          <div className="text-green-500">+8.00%</div>
-        </div>
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="text-gray-500">Electronics</span>
-            <span className="text-blue-600">₦200.00</span>
-          </div>
-          <div className="text-green-500">+3.00%</div>
-        </div>
-        <div className="flex justify-between items-center">
-          <div className="flex flex-col">
-            <span className="text-gray-500">Rent</span>
-            <span className="text-blue-600">₦450.00</span>
-          </div>
-          <div className="text-green-500">+7.00%</div>
-        </div>
+        ))}
       </div>
     </div>
   );
