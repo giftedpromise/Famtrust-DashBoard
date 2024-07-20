@@ -5,9 +5,18 @@ import Dashboard from "./components/Dashboard";
 
 const App = () => {
   return (
-    <div>
+    <div className="flex">
       <SideBar />
-      <Dashboard />
+      <div
+        className="flex-col h-screen w-[100%] overflow-auto"
+        style={{
+          backgroundColor:
+            "var(--Color-Style-Primary-Roles-Pri-container, #E2DDFF)",
+        }}
+      >
+        <NavBar />
+        <Dashboard />
+      </div>
     </div>
   );
 };

@@ -1,3 +1,6 @@
+/* In your CSS file */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,6 +8,7 @@
 :root {
   --radius-rounded-sm: 4px;
   --Color-Style-Primary-Roles-Pri-color: #4567f7;
+  --Color-Style-Primary-Roles-Pri-variant: #2452d6;
 }
 
 .nav-text {
@@ -15,4 +19,104 @@
   font-weight: 700;
   line-height: 20px; /* 142.857% */
   letter-spacing: 0.25px;
+}
+
+.navbar {
+  background: var(--Color-Style-Primary-Roles-Pri-container, #e2ddff);
+}
+
+.placeholder-custom::placeholder {
+  color: var(--Neutral-Colors-dark-1, #525252);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.custom-input {
+  border: 1px solid var(--Neutral-Colors-dark-1, #525252);
+}
+
+.custom-text-style {
+  color: var(--Color-Style-Primary-Roles-Pri-variant, #2452d6);
+  font-family: Lato;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.mt-4 {
+  color: #ababab;
+  font-family: Lato, sans-serif; /* Fallback to sans-serif if Lato is unavailable */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+  letter-spacing: 0.5px;
+}
+
+.small-body-text {
+  color: var(--Neutral-8, #777);
+  font-family: Lato, sans-serif; /* Adding sans-serif as a fallback */
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  letter-spacing: 0.4px;
+}
+
+/* Card.module.css or your main CSS file */
+.card-name {
+  color: #000;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.25px;
+}
+
+.total-balance {
+  color: #ababab;
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+  letter-spacing: 0.25px;
+}
+
+.text-income {
+  color: var(
+    --Color-Style-Primary-Roles-Pri-variant,
+    #2452d6
+  ); /* Custom color or fallback */
+  font-family: Lato;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    width: 100%;
+    padding: 0; /* Remove padding on small screens */
+  }
+
+  .space-y-6 {
+    margin-top: 0; /* Remove vertical space on smaller screens */
+    margin-bottom: 0;
+  }
+
+  .space-x-6 {
+    margin-left: 0; /* Remove horizontal space on smaller screens */
+    margin-right: 0;
+  }
+
+  .progress-card {
+    width: 100%;
+    padding: 0; /* Remove padding on small screens */
+  }
 }
