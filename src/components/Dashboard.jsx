@@ -16,7 +16,10 @@ const Dashboard = () => {
       <div className="px-6">
         <CardSection />
       </div>
-      <div className="flex flex-col lg:flex-row gap-6 lg:ml-[330px] m-6 pl-6"></div>
+      <div className="flex flex-col lg:flex-row gap-6 lg:ml-[330px] m-6 pl-6">
+        <RecentTransactions />
+        <ExpenseCard />
+      </div>
     </div>
   );
 };
