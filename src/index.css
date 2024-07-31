@@ -124,16 +124,6 @@
     padding: 0; /* Remove padding on small screens */
   }
 
-  .space-y-6 {
-    margin-top: 0; /* Remove vertical space on smaller screens */
-    margin-bottom: 0;
-  }
-
-  .space-x-6 {
-    margin-left: 0; /* Remove horizontal space on smaller screens */
-    margin-right: 0;
-  }
-
   .progress-card {
     width: 100%;
     padding: 0; /* Remove padding on small screens */
